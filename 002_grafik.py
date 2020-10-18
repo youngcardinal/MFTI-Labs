@@ -5,7 +5,7 @@ x = int(input())
 y = int(input())
 if x > 0 and y > 0:
     print('Первая четверть графика')
-elif x > 0 and y < 0:
+elif y < 0:
     print('Четвертая четверть графика')
 elif y > 0:
     print('Вторая четверть графика')
