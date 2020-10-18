@@ -12,7 +12,7 @@ print("Задача:\nНарисовать черепашкой выбранну
       "7: Квадратная спираль\n"
       "8: Звезда Давида")
 x = int(input())
-if x == 1:
+if x == 1:              # Буква S
     turtle.shape('turtle')
     turtle.forward(50)
     turtle.left(90)
@@ -24,7 +24,7 @@ if x == 1:
     turtle.right(90)
     turtle.forward(50)
     time.sleep(3)  # Задержка 3 секунды
-else:
+elif x == 2:            # Квадрат
     turtle.shape('turtle')
     turtle.forward(150)
     turtle.left(90)
@@ -34,3 +34,13 @@ else:
     turtle.left(90)
     turtle.forward(150)
     time.sleep(3)
+elif x == 3:            # Окружность
+    turtle.shape('turtle')
+    n = 360
+    while n > 0:
+        turtle.left(1)
+        turtle.forward(1)
+        n -= 1
+    time.sleep(3)
+else:
+    print('Выбран неверный номер фигуры!')
