@@ -2,5 +2,8 @@ print("Задача:\nВывeдем на экран все целые числа
 a = int(input())
 print("Введите число n:")
 n = int(input())
-for i in range(a, n):
-    print(i)
+if a > n:
+    for i in range(a, n):
+        print(i)
+else:
+    print("Ошибка: не удалось построить диапазон, проверьте введеные значения, возможно a<n !")
