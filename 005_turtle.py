@@ -63,5 +63,18 @@ elif x == 4:            # Пирамида
         turtle.pendown()
         m += 1          # увеличиваем счетчик на единицу
     time.sleep(3)
+elif x == 5:            # Звезда
+    print("Введите количество лучей звезды: ")
+    m = int(input())
+    n = 360/m           # Рассчитывается угол между лучами
+    while m > 0:
+        turtle.shape('turtle')
+        turtle.forward(150)
+        turtle.penup()
+        turtle.backward(150)
+        turtle.pendown()
+        turtle.right(n)
+        m -= 1
+    time.sleep(3)
 else:
     print('Выбран неверный номер фигуры!')
