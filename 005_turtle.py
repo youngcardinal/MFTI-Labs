@@ -1,3 +1,4 @@
+import math
 import turtle
 import time
 
@@ -9,7 +10,8 @@ print("Задача:\nНарисовать черепашкой выбранну
       "4: Пирамида\n"
       "5: Звезда\n"
       "6: Спираль\n"
-      "7: Квадратная 'спираль'")
+      "7: Квадратная 'спираль'\n"
+      "8: Правильные многоугольники")
 x = int(input())
 if x == 1:              # Буква S
     turtle.shape('turtle')
@@ -94,5 +96,27 @@ elif x == 7:             # Квадратная "спираль"
         n += 5          # увеличиваем величину грани
         m += 1          # увеличиваем счетчик на единицу
     time.sleep(3)
+elif x == 8:            # Правильные многоугольники
+    radius = 10
+    side = 3
+
+    def polygons(length_side, side):    # вводим функцию рисования многоугольника
+        angle = 360 / side
+        while side > 0:
+            turtle.left(angle)
+            turtle.forward(length_side)
+            side -= 1
+    while side < 13:
+        length_side = 2 * radius * math.sin(math.pi / side)
+        half_angle = (180 - 360 / side) / 2
+        turtle.left(half_angle)
+
+        polygons(length_side, side)
+        turtle.right(half_angle)
+        turtle.penup()
+        turtle.forward(10)
+        turtle.pendown()
+        side += 1
+        radius += 10
 else:
     print('Выбран неверный номер фигуры!')
