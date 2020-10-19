@@ -43,7 +43,7 @@ elif x == 3:            # Окружность
         n -= 1
     time.sleep(3)
 elif x == 4:            # Пирамида
-    turtle.shape('turtle')
+    # turtle.shape('turtle')
     n = 15              # длина грани
     m = 1               # счетчик проходов
     while m <= 10:
@@ -75,6 +75,15 @@ elif x == 5:            # Звезда
         turtle.pendown()
         turtle.right(n)
         m -= 1
+    time.sleep(3)
+elif x == 6:            # Спираль
+    from math import pi, sin, cos
+    turtle.shape('turtle')
+    for i in range(200):
+        t = i / 10 * pi
+        dx = t * cos(t)
+        dy = t * sin(t)
+        turtle.goto(dx, dy)
     time.sleep(3)
 else:
     print('Выбран неверный номер фигуры!')
